@@ -36,7 +36,7 @@
         /* --- GLASSMORPHISM NAVIGATION --- */
         .site-header {
             background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px); /* Frosted glass effect */
+            backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             padding: 18px 5%;
             position: sticky;
@@ -124,74 +124,6 @@
             font-weight: bold;
         }
 
-        /* --- PREMIUM CARDS (GRID) --- */
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .card {
-            background: var(--surface);
-            border: 1px solid rgba(0,0,0,0.05);
-            border-radius: var(--radius);
-            padding: 35px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* Subtle top border accent on cards */
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            opacity: 0;
-            transition: var(--transition);
-        }
-
-        .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 24px rgba(0,0,0,0.08);
-        }
-
-        .card:hover::before {
-            opacity: 1;
-        }
-
-        .card h3 {
-            margin-top: 0;
-            color: var(--primary);
-            font-size: 1.4rem;
-            margin-bottom: 12px;
-        }
-
-        .card p {
-            font-size: 1.05rem;
-            color: var(--text-muted);
-            margin-bottom: 25px;
-            line-height: 1.6;
-        }
-
-        .card-link {
-            color: var(--secondary);
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            transition: var(--transition);
-        }
-
-        .card-link:hover {
-            gap: 5px; /* Creates a tiny slide effect on the arrow */
-        }
-
         /* --- BUTTONS --- */
         .contact-btn {
             display: inline-block;
@@ -267,7 +199,6 @@
         <nav class="nav-links">
             <a href="#about">About</a>
             <a href="#services">Capabilities</a>
-            <a href="#work">Case Studies</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
@@ -297,31 +228,12 @@
         </ul>
     </section>
 
-    <!-- PORTFOLIO SECTION -->
-    <section id="work" class="section fade-in-section">
-        <h2>Featured Architecture</h2>
-        <p>A look at how we architect complex environmental metrics into clear, automated visualizations.</p>
-        
-        <div class="grid-container">
-            <div class="card">
-                <h3>Refinery Emissions Telemetry</h3>
-                <p>An interactive Power BI dashboard tracking real-time environmental metrics and active pollution control processes.</p>
-                <a href="#" class="card-link">Explore Architecture &rarr;</a>
-            </div>
-
-            <div class="card">
-                <h3>Automated ESG Pipeline</h3>
-                <p>A scalable cloud data architecture built to automate the collection, validation, and reporting of sustainability data.</p>
-                <a href="#" class="card-link">Explore Architecture &rarr;</a>
-            </div>
-        </div>
-    </section>
-
     <!-- CONTACT SECTION -->
     <section id="contact" class="section fade-in-section" style="text-align: center;">
-        <h2>Ready to Streamline Your Operations?</h2>
-        <p>Let's discuss how customized data automation can transform your environmental reporting workflow.</p>
-        <a href="mailto:your.email@example.com" class="contact-btn">Initiate a Consultation</a>
+        <h2>Let's Connect</h2>
+        <p>I am actively building out new ESG data architecture models and reporting tools. You can follow my progress, explore my code, or reach out on GitHub.</p>
+        
+        <a href="https://github.com/value-asymmetry" target="_blank" class="contact-btn">Connect on GitHub</a>
     </section>
 
     <!-- FOOTER -->

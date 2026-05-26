@@ -3,95 +3,347 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Value Asymmetry</title>
+    <meta name="description" content="Value Asymmetry provides ESG strategy, intelligent automation systems, and real-time reporting dashboards for environmental data.">
+    <title>Value Asymmetry | ESG Strategy & Data Automation</title>
+
+    <!-- Premium Typography: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <style>
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f7f9fc;
-            color: #1a1a1a;
+        /* --- CORE DESIGN VARIABLES --- */
+        :root {
+            --primary: #0a1a3f;
+            --secondary: #294b8a;
+            --background: #f8fafc;
+            --surface: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #475569;
+            --radius: 12px;
+            --transition: all 0.3s ease;
         }
 
-        /* Banner Image - Scales perfectly without cropping your text */
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: var(--background);
+            color: var(--text-main);
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        /* --- GLASSMORPHISM NAVIGATION --- */
+        .site-header {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px); /* Frosted glass effect */
+            -webkit-backdrop-filter: blur(12px);
+            padding: 18px 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .site-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links a {
+            margin-left: 30px;
+            text-decoration: none;
+            color: var(--text-muted);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+
+        /* --- BANNER --- */
         .hero-banner {
             width: 100%;
             height: auto;
             display: block;
-            background: #0a1a3f; /* Fills the background in case your image is transparent */
+            background: var(--primary);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
         }
 
-        /* Standard Section Styling */
+        /* --- TYPOGRAPHY & LAYOUT --- */
         .section {
-            max-width: 900px;
-            margin: 60px auto;
-            padding: 0 20px;
+            max-width: 1000px;
+            margin: 100px auto;
+            padding: 0 5%;
         }
 
         .section h2 {
-            font-size: 2rem;
-            margin-bottom: 15px;
-            color: #0a1a3f;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--primary);
+            letter-spacing: -0.5px;
         }
 
         .section p {
-            line-height: 1.6;
-            font-size: 1.1rem;
+            line-height: 1.8;
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            font-weight: 300;
         }
 
-        /* Clean Bullet Points for Services */
-        .section ul {
-            line-height: 1.6;
-            font-size: 1.1rem;
-            padding-left: 20px;
-        }
-        
-        .section li {
-            margin-bottom: 10px;
+        /* --- MODERN BULLET POINTS --- */
+        .services-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 30px;
         }
 
-        /* Footer */
-        footer {
-            background: #0a1a3f;
+        .services-list li {
+            font-size: 1.15rem;
+            color: var(--text-main);
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+            font-weight: 400;
+        }
+
+        .services-list li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+            font-weight: bold;
+        }
+
+        /* --- PREMIUM CARDS (GRID) --- */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: var(--surface);
+            border: 1px solid rgba(0,0,0,0.05);
+            border-radius: var(--radius);
+            padding: 35px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Subtle top border accent on cards */
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+        }
+
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        .card h3 {
+            margin-top: 0;
+            color: var(--primary);
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .card-link {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .card-link:hover {
+            gap: 5px; /* Creates a tiny slide effect on the arrow */
+        }
+
+        /* --- BUTTONS --- */
+        .contact-btn {
+            display: inline-block;
+            background-color: var(--primary);
             color: white;
+            text-decoration: none;
+            padding: 16px 36px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-top: 25px;
+            transition: var(--transition);
+            box-shadow: 0 4px 12px rgba(10, 26, 63, 0.2);
+        }
+
+        .contact-btn:hover {
+            background-color: var(--secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(10, 26, 63, 0.3);
+        }
+
+        /* --- SCROLL ANIMATION CLASSES --- */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            will-change: opacity, visibility;
+        }
+
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: none;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background: var(--primary);
+            color: rgba(255, 255, 255, 0.8);
             text-align: center;
-            padding: 25px;
-            margin-top: 60px;
+            padding: 40px 20px;
+            margin-top: 100px;
+            font-size: 0.95rem;
+        }
+
+        /* --- MOBILE RESPONSIVENESS --- */
+        @media (max-width: 768px) {
+            .site-header {
+                flex-direction: column;
+                padding: 20px;
+            }
+            .nav-links {
+                margin-top: 20px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+            .nav-links a {
+                margin: 0;
+            }
+            .section h2 {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <!-- HERO BANNER - Uses your exact image file and scales it safely -->
-    <img src="banner.png" alt="Value Asymmetry Banner" class="hero-banner">
+    <!-- NAVIGATION BAR -->
+    <header class="site-header">
+        <a href="#" class="site-logo">Value Asymmetry</a>
+        <nav class="nav-links">
+            <a href="#about">About</a>
+            <a href="#services">Capabilities</a>
+            <a href="#work">Case Studies</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- HERO BANNER -->
+    <img src="banner.png" alt="Value Asymmetry Banner - ESG Strategy & Data Automation" class="hero-banner">
 
     <!-- ABOUT SECTION -->
-    <div class="section">
-        <h2>What We Do</h2>
+    <section id="about" class="section fade-in-section">
+        <h2>Intelligent Data. Measurable Impact.</h2>
         <p>
             Value Asymmetry builds intelligent automation systems that simplify ESG reporting,
-            streamline compliance workflows, and transform environmental data into actionable insights.
-            Our mission is to eliminate complexity and empower organizations to operate with clarity,
-            transparency, and measurable impact.
+            streamline compliance workflows, and transform complex environmental data into actionable insights.
+            Our mission is to eliminate bottlenecks and empower organizations to operate with complete clarity
+            and operational transparency.
         </p>
-    </div>
+    </section>
 
     <!-- SERVICES SECTION -->
-    <div class="section">
-        <h2>Our Focus Areas</h2>
-        <ul>
-            <li>Automated environmental data collection</li>
-            <li>ESG compliance workflows</li>
-            <li>Real-time reporting dashboards</li>
-            <li>AI-driven sustainability insights</li>
+    <section id="services" class="section fade-in-section">
+        <h2>Core Capabilities</h2>
+        <ul class="services-list">
+            <li>Automated environmental data collection and pipelining</li>
+            <li>ESG compliance and regulatory workflows</li>
+            <li>Real-time BI reporting and dashboard architecture</li>
+            <li>AI-driven sustainability analytics and strategy</li>
         </ul>
-    </div>
+    </section>
+
+    <!-- PORTFOLIO SECTION -->
+    <section id="work" class="section fade-in-section">
+        <h2>Featured Architecture</h2>
+        <p>A look at how we architect complex environmental metrics into clear, automated visualizations.</p>
+        
+        <div class="grid-container">
+            <div class="card">
+                <h3>Refinery Emissions Telemetry</h3>
+                <p>An interactive Power BI dashboard tracking real-time environmental metrics and active pollution control processes.</p>
+                <a href="#" class="card-link">Explore Architecture &rarr;</a>
+            </div>
+
+            <div class="card">
+                <h3>Automated ESG Pipeline</h3>
+                <p>A scalable cloud data architecture built to automate the collection, validation, and reporting of sustainability data.</p>
+                <a href="#" class="card-link">Explore Architecture &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="section fade-in-section" style="text-align: center;">
+        <h2>Ready to Streamline Your Operations?</h2>
+        <p>Let's discuss how customized data automation can transform your environmental reporting workflow.</p>
+        <a href="mailto:your.email@example.com" class="contact-btn">Initiate a Consultation</a>
+    </section>
 
     <!-- FOOTER -->
     <footer>
-        © 2026 Value Asymmetry — All Rights Reserved
+        © 2026 Value Asymmetry — Engineered for clarity.
     </footer>
+
+    <!-- SCROLL ANIMATION SCRIPT -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            const hiddenElements = document.querySelectorAll('.fade-in-section');
+            hiddenElements.forEach((el) => observer.observe(el));
+        });
+    </script>
 
 </body>
 </html>

@@ -145,6 +145,8 @@
             transition: var(--transition);
             box-shadow: 0 4px 12px rgba(10, 26, 63, 0.2);
             border: 2px solid var(--primary);
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
         }
 
         .contact-btn:hover {
@@ -165,6 +167,7 @@
             font-size: 1.1rem;
             transition: var(--transition);
             border: 2px solid var(--primary);
+            font-family: 'Inter', sans-serif;
         }
 
         .secondary-btn:hover {
@@ -259,8 +262,10 @@
         <p>I am actively building out new ESG data architecture models and reporting tools. You can view my architecture on GitHub, or email me directly to discuss strategy.</p>
         
         <div class="btn-container">
-            <a href="mailto:valueasymmetry@gmail.com" class="contact-btn">Email: valueasymmetry@gmail.com</a>
+            <!-- New Copy to Clipboard Button -->
+            <button onclick="copyEmail()" class="contact-btn" id="emailBtn">Copy Email Address</button>
             
+            <!-- GitHub Organization Button -->
             <a href="https://github.com/Value-Asymmetry" target="_blank" rel="noopener noreferrer" class="secondary-btn">View Our Architecture</a>
         </div>
     </section>
@@ -270,6 +275,7 @@
     </footer>
 
     <script>
+        // Smooth scroll animations
         document.addEventListener("DOMContentLoaded", function() {
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
@@ -282,6 +288,21 @@
             const hiddenElements = document.querySelectorAll('.fade-in-section');
             hiddenElements.forEach((el) => observer.observe(el));
         });
+
+        // Copy email to clipboard function
+        function copyEmail() {
+            navigator.clipboard.writeText("valueasymmetry@gmail.com").then(() => {
+                const btn = document.getElementById('emailBtn');
+                btn.innerText = "Email Copied!";
+                
+                // Change the text back after 3 seconds
+                setTimeout(() => {
+                    btn.innerText = "Copy Email Address";
+                }, 3000);
+            }).catch(err => {
+                console.error('Failed to copy text: ', err);
+            });
+        }
     </script>
 
 </body>

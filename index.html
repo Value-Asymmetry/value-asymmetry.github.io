@@ -120,4 +120,200 @@
             font-weight: 400;
         }
 
-        .services-list li
+        .services-list li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+            font-weight: bold;
+        }
+
+        /* --- BUTTONS --- */
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            padding: 16px 36px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            box-shadow: 0 4px 12px rgba(10, 26, 63, 0.2);
+            cursor: pointer;
+        }
+
+        .contact-btn:hover {
+            background-color: var(--secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(10, 26, 63, 0.3);
+        }
+        
+        .email-btn {
+            background-color: var(--secondary);
+        }
+        
+        .email-btn:hover {
+            background-color: var(--primary);
+        }
+
+        /* --- SCROLL ANIMATION CLASSES --- */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            will-change: opacity, visibility;
+        }
+
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: none;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background: var(--primary);
+            color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 100px;
+            font-size: 0.95rem;
+        }
+
+        /* --- MOBILE RESPONSIVENESS --- */
+        @media (max-width: 768px) {
+            .site-header {
+                flex-direction: column;
+                padding: 20px;
+            }
+            .nav-links {
+                margin-top: 20px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+            .nav-links a {
+                margin: 0;
+            }
+            .section {
+                scroll-margin-top: 130px;
+            }
+            .section h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <a href="#" class="site-logo">Value Asymmetry</a>
+        <nav class="nav-links">
+            <a href="#about">About</a>
+            <a href="#services">Capabilities</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <img src="banner.png" alt="Value Asymmetry Banner - ESG Strategy & Data Automation" class="hero-banner">
+
+    <section id="about" class="section fade-in-section">
+        <h2>Engineering Precision. Intelligent Data.</h2>
+        <p>
+            Value Asymmetry bridges the gap between physical environmental science and modern data architecture. 
+            Founded on a rigorous background in <strong>Environmental Engineering</strong>—with specialized expertise in pollution transport and control processes—we don't just move data; we understand the science and compliance requirements behind it.
+        </p>
+        <p>
+            We build intelligent automation systems that simplify ESG reporting,
+            streamline regulatory workflows, and transform complex environmental metrics into actionable insights.
+            Our mission is to eliminate bottlenecks and empower organizations to operate with complete transparency.
+        </p>
+        
+        <div style="margin-top: 30px; padding: 20px; background: #ffffff; border-left: 4px solid var(--secondary); border-radius: 0 8px 8px 0; box-shadow: 0 4px 15px rgba(0,0,0,0.03);">
+            <p style="margin: 0; font-size: 1.05rem; color: var(--text-main); font-weight: 400;">
+                <strong style="color: var(--primary);">Current R&D Focus:</strong> Actively integrating the <strong>full Microsoft Copilot AI suite</strong> and advanced <strong>Power BI architecture</strong> into next-generation ESG data models to deliver predictive environmental analytics.
+            </p>
+        </div>
+    </section>
+
+    <section id="services" class="section fade-in-section">
+        <h2>Core Capabilities</h2>
+        <ul class="services-list">
+            <li>Automated environmental data collection and pipelining</li>
+            <li>ESG compliance and regulatory workflows</li>
+            <li>Real-time BI reporting and dashboard architecture</li>
+            <li>AI-driven sustainability analytics and strategy</li>
+        </ul>
+    </section>
+
+    <section id="contact" class="section fade-in-section" style="text-align: center;">
+        <h2>Let's Connect</h2>
+        <p>I am actively building out new ESG data architecture models and reporting tools. Reach out directly to discuss ESG strategy, or follow my progress on GitHub.</p>
+        
+        <div class="btn-container">
+            <a id="secure-email-btn" class="contact-btn email-btn">Email Me</a>
+            <a href="https://github.com/value-asymmetry" target="_blank" rel="noopener noreferrer" class="contact-btn">Explore GitHub</a>
+        </div>
+    </section>
+
+    <footer>
+        © 2026 Value Asymmetry — Engineered for clarity.
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Scroll Animation Logic
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            const hiddenElements = document.querySelectorAll('.fade-in-section');
+            hiddenElements.forEach((el) => observer.observe(el));
+
+            // Upgraded Secure Email Button Logic
+            const emailBtn = document.getElementById('secure-email-btn');
+            if (emailBtn) {
+                emailBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // UPDATE THESE TWO LINES WITH YOUR REAL EMAIL
+                    const user = 'your.name'; 
+                    const domain = 'example.com';
+                    const fullEmail = user + '@' + domain;
+                    
+                    // 1. Attempt to open the default email app
+                    window.location.href = 'mailto:' + fullEmail;
+
+                    // 2. Fallback: Copy to clipboard and show visual confirmation
+                    navigator.clipboard.writeText(fullEmail).then(function() {
+                        const originalText = emailBtn.innerText;
+                        emailBtn.innerText = 'Email Copied!';
+                        
+                        // Reset button text after 3 seconds
+                        setTimeout(function() {
+                            emailBtn.innerText = originalText;
+                        }, 3000);
+                    }).catch(function(err) {
+                        console.error('Could not copy text: ', err);
+                    });
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -1,28 +1,27 @@
-Value Asymmetry — Official Website Repository
-Welcome to the official website repository for Value Asymmetry, a company focused on ESG automation, environmental engineering insights, and data‑driven operational systems. This repository powers the public website located at:
+# Value Asymmetry — Official Website Repository
 
-https://value-asymmetry.github.io
+Value Asymmetry is a consultancy founded by an **Environmental Engineer** (B.E.E., University of Delaware, concentration in **Pollution Transport and Control Processes**). We focus on the intersection of sustainability and modern data science, automating complex ESG compliance workflows specifically tailored for Small-to-Medium Enterprises (SMEs). We transform raw operational data into actionable, audit-ready insights across Scope 1, 2, and 3 emissions. This repository powers our public website at [https://value-asymmetry.github.io](https://value-asymmetry.github.io).
 
-What this repository contains:
-Company mission and overview
-Project showcases and demonstrations
-ESG automation research and documentation
-Public resources and reference materials
-Future dashboards, tools, and web components
+## Research & Development: The Technical Stack
+We bridge core environmental engineering principles with intelligent systems to streamline sustainability reporting. Our R&D approach is iterative—we are actively building and testing advanced data architectures to help SMEs achieve comprehensive emissions visibility:
 
-Purpose of this repository:
-This repository serves as the foundation for the Value Asymmetry public website. It will evolve into a central hub for company information, technical documentation, project updates, public‑facing content, and interactive tools or data visualizations.
-
-Organization structure:
-This repository is part of the broader Value Asymmetry GitHub Organization, which includes internal automation tools, ESG data pipelines, engineering documentation, project repositories, and public‑facing assets.
-
-Status:
-This site is currently in active development as part of the Value Asymmetry build‑out.
+* **AI & Automation**: Developing workflows using **Microsoft Copilot Studio** to automate compliance documentation, regulatory alignment, and Scope 3 supply chain research.
+* **Data Engineering**: Architecting automated, scalable pipelines using **SQL Server**, **Microsoft Fabric**, and **Power BI** to deliver high-fidelity ESG reporting that is affordable and accessible for SMEs.
 
 ---
-### Portfolio: Active ESG Projects
-* **ColdChain Logistics ESG Engine**
-    * **Objective**: Automate carbon accounting for temperature-controlled supply chains.
-    * **Capability**: Transforms raw fleet fuel/cargo logs into audit-ready Carbon Intensity metrics (g CO2e/ton-mile).
-    * **Link**: [ColdChain Logistics ESG Pipeline](https://github.com/Value-Asymmetry/coldchain-logistics-esg-pipeline)
-      
+
+## Portfolio: Active ESG Projects
+
+### ColdChain Logistics ESG Engine
+An automated data pipeline designed for temperature-controlled supply chains. This tool calculates total emissions and carbon intensity metrics ($gCO_2e/ton\text{-}mile$) in accordance with EPA standards.
+
+* **Objective**: Simplify end-to-end carbon accounting (Scope 1, 2, and 3) for logistics-focused SMEs.
+* **Capability**: Transforms raw fleet fuel/cargo logs into reporting-ready ESG intelligence.
+* **Source Code**: [View on GitHub](https://github.com/Value-Asymmetry/coldchain-logistics-esg-pipeline)
+
+---
+
+## Repository Overview
+* **Purpose**: This repository serves as the central hub for our company mission, technical documentation, project updates, and interactive data tools.
+* **Organization**: Part of the broader **Value Asymmetry GitHub Organization**, which houses our internal automation tools, ESG data pipelines, and public-facing assets.
+* **Status**: In active development.
